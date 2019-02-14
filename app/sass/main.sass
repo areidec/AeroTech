@@ -1,6 +1,7 @@
 @import "fonts"
 @import "libs"
 @import "vars"
+@import "header"
 
 *
 	-webkit-box-sizing: border-box
@@ -41,9 +42,10 @@ body
 	font-size: 16px
 	min-width: 320px
 	position: relative
-	line-height: 1.65
+	line-height: 1.43
 	font-family: $default-font
 	overflow-x: hidden
+	background-color: grey
 
 .img-responsive
 	display: block
@@ -57,10 +59,33 @@ body
 	background-color: $accent
 	color: #fff
 
-body
-	background-color: red
-	.container
-		background-color: yellow
+h2 
+	@include text_normal
+	font-size: 42px
+	line-height: 1.52
+	font-weight: bold
+	
+h4 
+	@include text_normal
+	font-size: 16px
+	line-height: 1.5
+	font-weight: bold
 
+h5 
+	@include text_normal
+	font-size: 14px
+	line-height: 1.43
+	font-weight: bold
+p 
+	@include text_normal
+	font-size: 14px
+	line-height: 1.43
+	font-weight: normal
 
+@media only screen and (max-width : 1240px)
+	.hidden-tab
+		display: none
+@media only screen and (max-width : 767.8px)
+	.hidden-mobile
+		display: none
 @import "media" // Всегда в конце
