@@ -1,237 +1,156 @@
-.btn-nav-bottom
-    color: #fff
-    text-transform: uppercase
-    height: 40px
-    width: 190px
-    display: flex
-    justify-content: center
-    align-items: center
-    font-family: Formular-Regular
-    font-size: 12px
-    background: #32dbc7
-    border: 0
-    &:hover
-        background: #58ccf7
-.btn-box
-    color: $main
-    text-transform: uppercase
-    height: 40px
-    width: 190px
-    display: flex
-    justify-content: center
-    align-items: center
-    font-size: 12px
-    font-family: Formular-Regular
-    border: 2px solid $main 
-    cursor: pointer
-    position: relative
-    overflow: hidden
-    z-index: 2
-    &::after
-        z-index: -1
-        content: ''
-        bottom: -40px
-        position: absolute
-        background-color: $main
-        height: 40px    
-        width: 190px
-        transition: transform .3s ease
-    &:hover
-        color: #fff
-        &::after
-            transform: translateY(-40px)
-
-.worker
-    &-post  
-        font-size: 16px
-        margin: 0
-        margin-bottom: 10px
-        font-weight: bold
-        line-height: 1.5
-        font-family: Formular-Regular
-    &-name
-        font-size: 22px
-        line-height: 1.16
-        font-weight: 300
-        margin: 0
-        font-family: Formular-Regular
 .page 
     position: fixed
     top: 0
     left: 0
     width: 100%
     height: 100vh
-    &__title
-        font-size: 42px
-        font-family: Formular-Regular
-        color: $headText
-        line-height: 1.52
-        font-weight: bold
-        margin: 32px 0
+    &__container
+        width: 100%
+        padding-left: 10px
+        padding-right: 10px
+        margin: 0 auto
+        @media (max-width: 1639.98px)
+            width: 1200px
+        @media (max-width: 1239.98px)
+            width: 960px
+        @media (max-width: 991.98px)
+            width: 720px
+        @media (max-width: 767.98px)
+            width: 100%
+
+    &__left
+        display: flex
+        padding: 0 10px
+        flex-grow: 0
+        flex-shrink: 0
+        flex-basis: calc((100% - 1200px) / 2)
+        min-height: calc(100vh - 240px)
+        @media (max-width: 1639.98px)
+            flex-basis: 25%
+            max-width: 25%
+        @media (max-width: 991.98px)
+            display: none
+    &__right
+        flex: 0 0 1200px
+        max-width: 1200px
+        padding: 0 10px
+        @media (max-width: 1639.98px)
+            flex-basis: 75%
+            flex-grow: 0
+            flex-shrink: 0
+            max-width: 75%
+        @media (max-width: 991.98px)
+            flex-basis: 100%
+            max-width: 100%
     &__track 
         transform:  translateY(0px)
         transition: transform .6s ease
         position: relative
     &__nav 
+        left: 40px
+        max-width: calc((100% - 1200px) / 2 - 40px)
         display: flex
         flex-direction: column
         justify-content: flex-start
-        position: absolute
+        position: fixed
         z-index: 100
-        left: 0
         top: 200px
         a  
-            font-family: Formular-Regular
+            margin-bottom: 20px
+            font-family: Formular
             @include text_normal
-            font-size: 20px 
+            font-size: 16px 
             line-height: 1.5
             color: $headText
+            text-decoration: none
+            &.active
+                color: $ac
             &:hover 
                 color: $ac
-        &__nav-bottom
-            margin-top: 40px
+        @media (max-width: 1639.98px)
+            left: calc(50% - 600px)
+            max-width: 100%
+        @media (max-width: 1239.98px)
+            left: calc(50% - 480px)
+        @media (max-width: 991.98px)
+            display: none
     &-section 
         background: #fff
         height: 100vh
         overflow: auto
         overflow-x: hidden
         transition: all .3s ease
+        &::-webkit-scrollbar
+            width: 0px !important
         &__wrap
+            padding: 160px 0 80px
             transform: scale(0.8)
             transition: all .3s ease
             width: 100%
             height: 100vh
         &.active
+            .page__nav a 
+                color: #fff
             .page-section__wrap
                 transform: scale(1)
-        &__container
-            display: flex
-            max-width: 1200px
-            padding-left: 10px
-            padding-right: 20px
-            margin: 0 auto
-            min-height: calc(100vh - 240px)
-            padding: 160px 0 80px
-        &__left
-            display: flex
-            max-width: 25%
-            flex-grow: 0
-            flex-shrink: 0
-            flex-basis: 25%
-            min-height: calc(100vh - 240px)
-            justify-content: flex-start
-            padding-left: 10px
-            padding-right: 10px
-        &__right
-            display: flex
-            max-width: 75%
-            flex-grow: 0
-            flex-shrink: 0
-            flex-basis: 75%
-            justify-content: flex-start
-            padding-left: 10px
-            padding-right: 10px
-@media (min-width: 1640px)
-    .page-section
-        &__container
-            min-width: 100%
-        &__left
-            flex-basis: calc((100% - 1200px) / 2)
-.generalship
-    background-color: #fff
-.box
-    padding: 30px
-    background-color: $bgCard
-    margin-bottom: 20px 
-    position: relative
-    &__title_top
-        line-height: 1.5
-        font-weight: bold
-        font-size: 16px
-        font-family: Formular-Regular
-    &__title-name
-        line-height: 1.43
-        font-size: 28px
-        font-family: Formular-Regular
-        font-weight: 300
-        margin: 0 0 20px
-    &__bottom
-        display: flex
-        &-left
-            max-width: 50%
-            flex-basis: 50%
-            flex-grow: 0
-            flex-shrink: 0
-        &-telephone
-            display: flex
-            align-items: center
-            margin-bottom: 14px
-            svg 
-                fill: $main  
-            a 
-                cursor: pointer
-                margin: 0
-                margin-left: 9px
-        &-email
-            display: flex
-            align-items: center
-            svg 
-                fill: $main  
-            a
-                cursor: pointer
-                margin: 0
-                margin-left: 9px
-        &-right
-            max-width: 50%
-            flex-basis: 50%
-            flex-grow: 0
-            flex-shrink: 0
-    &__portret
-        position: absolute
-        bottom: 0
-        right: 0
-        width: 210px
-        height: 266px
-        
-.container-page
-    @media (min-width: 1200px)
-        width: 820px
-        margin: 0
+    &__title
+        @include text_normal
+        line-height: 1.52
+        margin-top: 0
+        margin-bottom: 36px
+        &_white
+            color: #fff
+        &_black
+            color: $headText
+.btn
+    @include text_normal
+    font-size: 12px
+    line-height: normal
+    width: 190px
+    height: 40px
+    text-decoration: none
+    display: flex
+    align-items: center
+    justify-content: center
+    &.empty
+        border: $main solid 2px
+        color: $main
+        position: relative
+        overflow: hidden
+        transition: all 1s ease
+        z-index: 2
+        &::after
+            z-index: -1
+            transition: all 0.3s ease
+            content: ''
+            position: absolute
+            background: $main
+            width: 190px
+            height: 40px
+            top: 38px
+        &:hover
+            color: #fff !important
+            &::after
+                top: 0px
+    &.green
+        transition: all 1s ease
+        background: #007bff
+        color: #fff
+        svg
+            margin-left: 6px
+            fill: #fff
+        &:hover
+            background-color: #58ccf7
 
-@media (max-width: 1239.9px)
-    .page-section
-        &__container
-            width: 960px
-    .box__bottom
-        flex-wrap: wrap
-        &-left, &-right
-            flex-basis: 100%
-            max-width: 100%
-        &-right
-            margin-top: 20px
-
-@media (max-width: 991.98px)
-    .page__nav
-        display: none
-    .page-section
-        &__container
-            width: 720px
-        &__right
-            max-width: 100%
-            flex-basis: 100%
-        &__left
-            display: none
-
-@media (max-width: 767.98px)
-    .page-section
-        &__container
-            padding: 0 10px
-            width: 100%
-        &__right
-            justify-content: center
-    .box__portret
-        height: auto
-        width: 50%  
-    .first
-        padding-bottom: calc((100vw - 20px) / 2 * (18/15))
+.page__bot-nav
+    margin-top: 30px
+    margin-bottom: 100px
+    
+    
+.col-full
+    @media (max-width: 1639.98px)
+        flex-shrink: 0
+        flex-grow: 0
+        flex-basis: 100%
+        min-width: 100%
 

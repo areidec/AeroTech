@@ -4,6 +4,11 @@
 @import "header"
 @import "search-form"
 @import "main-container"
+@import "history"
+@import "generalship"
+@import "certificate"
+@import "../libs/lightbox2-master/dist/css/lightbox.css"
+@import "light-box"
 
 *
 	-webkit-box-sizing: border-box
@@ -41,6 +46,7 @@ html, body
 	height: 100%
 
 body
+	margin: 0
 	font-size: 16px
 	min-width: 320px
 	position: relative
@@ -66,18 +72,31 @@ h2
 	font-size: 42px
 	line-height: 1.52
 	font-weight: bold
+h3 
+	@include text_normal
+	font-size: 22px
+	line-height: 1.36
+	font-weight: 300
+	margin: 0
 	
 h4 
 	@include text_normal
 	font-size: 16px
 	line-height: 1.5
 	font-weight: bold
+	margin: 0
 
 h5 
 	@include text_normal
 	font-size: 14px
 	line-height: 1.43
 	font-weight: bold
+h6 
+	margin: 0
+	@include text_normal
+	font-size: 28px
+	line-height: 1.43
+	font-weight: normal
 p 
 	@include text_normal
 	font-size: 14px

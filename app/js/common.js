@@ -5,13 +5,13 @@ $(function() {
 		$('.search-form').toggleClass('active');
 
 	});
-	$('.history').removeClass('init');
 	///search form
 	
 	//page scroll
 	
 	if(window.location.hash) {
 		setPage(window.location.hash);
+
 	}
 	else {
 		var firstContainerID = $('.page-section').attr('id');
@@ -24,16 +24,24 @@ $(function() {
 		$('#'+id).addClass('active');
 		window.location.hash = id;
 		var offset = $('#'+id).position().top;
-		console.log(id, offset);
 		$('.page__track').css({'transform': 'translateY(-'+ Math.abs(offset) +'px)'});
-		console.log({'transform': 'translateY(-'+ (parseInt(offset) ) +'px)'})
-	}
+		$('.page__nav a').removeClass('active');
+		$('.page__nav [href = "#' + id + '" ] ').addClass('active'); 
+	 }
+ 
 
-
-	$('.page__nav a').on('click', function(e) {
+	$('.page__nav a, .page__bot-nav a').on('click', function(e) {
 		e.preventDefault();
 		setPage($(this).attr('href'));
 	});
+
+
+	//light box
+	lightbox.option({
+		'alwaysShowNavOnTouchDevices': false,
+		'albumLabel': 'Изображение %1 из %2',
+		'wrapAround': true
+	  });
 
 	///end
 
