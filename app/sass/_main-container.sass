@@ -64,9 +64,12 @@
             color: $headText
             text-decoration: none
             &.active
-                color: $ac
+                color: $ac !important
             &:hover 
                 color: $ac
+        &.hist
+            a 
+                color: #fff
         @media (max-width: 1639.98px)
             left: calc(50% - 600px)
             max-width: 100%
@@ -136,6 +139,7 @@
         transition: all 1s ease
         background: #007bff
         color: #fff
+        text-align: center
         svg
             margin-left: 6px
             fill: #fff
