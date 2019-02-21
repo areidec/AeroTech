@@ -1,0 +1,114 @@
+.showUp
+    top: -25px !important
+.popup
+    display: none
+    &__overlay
+        position: fixed
+        height: 100vh
+        width: 100vw
+        background: #ffffff
+        opacity: .7
+        z-index: 100
+    &__form
+        z-index: 101
+        left: 50%
+        top: 50%
+        transform: translate(-50%, -50%)
+        position: absolute
+        background-color: $bgCard
+        padding: 20px
+        max-width: 600px
+    &__title
+        font-size: 24px
+        @include text_normal
+        color: $headText
+        font-weight: bold
+        margin-bottom: 40px
+
+.form
+    &-field
+        width: 100%
+        margin-bottom: 40px
+        position: relative
+        &:focus-within 
+            label
+                top: -25px
+    &-label
+        position: absolute
+        color: #8e969f
+        font-size: 14px
+        padding-left: 20px
+        top: 50%
+        transform: translateY(-50%)
+        transition: all .3s ease
+    &__text-label
+        padding-left: 20px
+        position: absolute
+        color: #8e969f
+        font-size: 14px
+        padding-left: 20px
+        top: 20px
+        transition: all .3s ease
+    &-text
+        border: 0
+        width: 100%
+        padding: 20px 20px
+        border-bottom: 2px transparent solid
+        &:focus
+            outline: none
+            transition: all .1s ease
+            outline: none
+            border-bottom: 2px $main solid
+            box-shadow: 0px 10px 20px 0 rgba(0, 0, 0, 0.1)
+    &-input
+        border: 0
+        height: 50px
+        padding: 0 20px
+        width: 100%
+        border-bottom: 2px transparent solid
+        &:focus
+            outline: none
+            transition: all .1s ease
+            outline: none
+            border-bottom: 2px $main solid
+            box-shadow: 0px 10px 20px 0 rgba(0, 0, 0, 0.1)
+.sub-btn
+    border: 0
+    background: transparent
+    cursor: pointer
+    border: 2px $main solid
+    padding: 7px 30px
+    text-transform: uppercase
+    color: $main
+    @include text_normal
+    position: relative 
+    overflow: hidden
+    &:after
+        transition: all ease .3s
+        position: absolute
+        content: ''
+        width: 100%
+        height: 100%
+        background: $main
+        bottom: -100%
+        left: 0
+        z-index: -1
+    &:hover
+        color: #fff
+        &:after
+            bottom: 0
+.close-form
+    cursor: pointer
+    width: 50px
+    height: 50px
+    background: #fff
+    position: absolute
+    top: -1px
+    right: 0
+    z-index: 102
+    display: flex
+    align-items: center
+    justify-content: center
+.error
+    input, textarea
+        border-bottom: 2px red solid !important

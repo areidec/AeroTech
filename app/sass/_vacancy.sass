@@ -1,0 +1,48 @@
+.vacancy
+    &__bottom
+        margin-top: 30px
+        padding-bottom: 40px
+    &__title
+        font-size: 22px
+        @include text_normal
+        color: $bodyText
+        line-height: 1.36
+        margin-bottom: 17px
+    &__body
+        padding-left: 30px
+    &__box
+        position: relative
+        background: $bgCard
+        width: 100%
+        &::before
+            transition: opacity .3s ease
+            content: ''
+            height: 2px
+            top: 0
+            position: absolute
+            width: 100%
+            background-color: $main
+            opacity: 0
+        &.active
+            &::before
+                opacity: 1
+    &__post
+        color: $bodyText
+    &__btn
+        display: block
+        cursor: pointer
+    &__header
+        padding: 30px
+        display: flex
+        justify-content: space-between
+        width: 100%
+        a 
+            display: flex
+            align-items: center
+            color: $main
+            text-decoration: none
+            @include text_normal
+            &:hover
+                text-decoration: underline
+.tgl-body
+    display: none
