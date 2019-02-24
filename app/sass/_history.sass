@@ -3,4 +3,97 @@
     background-repeat: repeat, no-repeat
     background-size: auto, cover
     background-position: 0 0, 50% 50%
+    height: auto !important
+    background-attachment: fixed
     
+//slider
+.slick
+    &-track 
+        margin: 0
+    &-slide 
+.slick-current
+    .slider__date
+        background: #2abbf0
+    .slider__point
+        background: #2abbf0
+.slider__track
+    width: calc((100vw - 1200px) / 2 + (1200px))
+.slider
+    &__navigation
+        display: flex 
+        margin-bottom: 30px
+        &__left, &__right
+            transition: all .3s ease
+            cursor: pointer
+            width: 60px
+            height: 50px
+            background-color: rgba(255, 255, 255, 0.1)
+            display: flex
+            justify-content: center
+            align-items: center
+            fill: #fff
+        &__left:hover, &__right:hover
+            background-color: rgba(255, 255, 255, 0.3)
+    &__date
+        display: flex
+        color: #fff
+        @include text_normal
+        background-color: $main
+        line-height: normal
+        width: 280px
+        height: 70px
+        align-items: center
+        justify-content: center
+        &_bold
+            font-size: 32px
+            font-weight: 700
+        &_normal
+            margin-left: 5px
+            font-size: 18px
+            font-weight: 300
+    &__point
+        border-radius: 50%
+        background-color: $main
+        width: 23px
+        height: 23px
+        position: relative 
+        margin: 21px 31px
+        &::after
+            content: ''
+            position: absolute
+            background-color: #fff
+            width: 5px
+            height: 5px
+            border-radius: 50%
+            top: 50%
+            left: 50%
+            transform: translate(-50%, -50%)
+    &__text
+        background-color: $bgCard
+        padding: 30px
+        position: relative
+        cursor: grab
+        &::before
+            content: ''
+            position: absolute
+            width: 1px
+            height: 70px
+            background-color: #fff
+            bottom: 100%
+            left: 42px
+            z-index: -1
+        &::after
+            content: ''
+            background-color: #fff
+            width: calc(100% + 20px)
+            left: 42px
+            top: -33px
+            height: 1px
+            position: absolute
+            z-index: -1
+    &__slide
+        padding-right: 20px
+
+
+.mb 
+    margin-bottom: 0px
