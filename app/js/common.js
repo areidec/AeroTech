@@ -28,6 +28,8 @@ $(function() {
 		$('.page__nav a').removeClass('active');
 		$('.page__nav [href = "#' + id + '" ] ').addClass('active'); 
 		navSetColor();
+		$('.anim').removeClass('anim-end');
+		setTimeout(function() {$('.anim').addClass('anim-end'); }, 700);
 	 }
  
 
@@ -43,11 +45,15 @@ $(function() {
 		'albumLabel': 'Изображение %1 из %2',
 		'wrapAround': true
 	  });
-
+	  
 	$('.btn-tgl').on('click', function(e){
 		e.preventDefault();
 		$('.vacancy__body').slideToggle('slow');
 		$('.vacancy__box').toggleClass('active');
+		$(this).toggleClass('active');
+		if ( $(this).hasClass('active') ) {
+			$(this).empty().append('свернуть');
+		} else { $(this).empty().append('развернуть')}
 	});
 	///end
 
@@ -66,7 +72,7 @@ $(function() {
 	});
 
 	$('.form-input, .form-text').focusout(function(){
-		console.log($(this).val())
+
 		if($(this).val().length > 0) {
 			$(this).parents('.form-field').find('label').addClass('showUp');
 		}
@@ -90,5 +96,33 @@ $(function() {
 
 		
 		return false;
-	})
+	});
+	$('.slider__track').slick({
+		infinite: false,
+		slidesToShow: 3,
+		nextArrow: '.slider__navigation__right',
+		prevArrow: '.slider__navigation__left',
+		slidesToScroll: 1,
+		arrows: true,
+		dots: false,
+		swipe: true,
+		swipeToSlide: true,
+		focusOnSelect: true,
+		adaptiveHeight: true,
+		responsive: [
+			{
+				breakpoint: 992,
+				settings: {
+					slidesToShow: 2
+				}
+			},
+			{
+				breakpoint: 768,
+				settings: {
+					slidesToShow: 1
+				}
+			}
+		]
+	});
+
 });
