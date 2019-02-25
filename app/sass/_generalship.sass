@@ -3,6 +3,13 @@
     padding-left: 23px
     position: relative
     margin-bottom: 19px
+    &_first
+        background: $bgCard
+        padding-left: 23px
+        position: relative
+        margin-bottom: 19px
+        @media (max-width: 767.98px)
+            padding-bottom: calc((100vw - 20px) / 2 * (18/15))
     &__post
         padding-top: 30px
         margin-bottom: 24px
@@ -21,6 +28,8 @@
             @media (max-width: 1239.98px)
                 margin-top: 17px
     &__email
+        display: flex
+        align-items: center
         margin-bottom: 17px
     &__email, &__telephone
         fill: $main
