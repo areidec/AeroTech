@@ -5,8 +5,7 @@ $(function() {
 		$('.search-form').toggleClass('active');
 
 	});
-	///search form
-	
+
 	//page scroll
 	
 	if(window.location.hash) {
@@ -48,7 +47,7 @@ $(function() {
 	  
 	$('.btn-tgl').on('click', function(e){
 		e.preventDefault();
-		$('.vacancy__body').slideToggle('slow');
+		$('.vacancy__body').slideToggle('slow');С
 		$('.vacancy__box').toggleClass('active');
 		$(this).toggleClass('active');
 		if ( $(this).hasClass('active') ) {
@@ -94,9 +93,13 @@ $(function() {
 			}
 		});
 
-		
 		return false;
 	});
+
+	$(".pop-form input, .pop-form .form-text").on("change paste keyup", function() {
+		$(this).parents('.form-field, .form-text').removeClass('error');
+	 });
+
 	$('.slider__track').slick({
 		infinite: false,
 		slidesToShow: 3,
@@ -124,5 +127,6 @@ $(function() {
 			}
 		]
 	});
+
 
 });

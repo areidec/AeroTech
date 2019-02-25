@@ -37,11 +37,11 @@
 					<a href="#" class="logotype"><img src="./img/logo-ru.svg" alt="logotype"></a>
 				</div>
 				<div class="header__center-container">
-					<div class="header__burger">
+					<button class="header__burger">
 						<svg xmlns="http://www.w3.org/2000/svg" width="24" height="16" viewBox="0 0 24 16" class="burger">
 							<path d="M819,952h24v2H819v-2Zm0,7h18v2H819v-2Zm0,7h12v2H819v-2Z" transform="translate(-819 -952)"/>
 						</svg>
-					</div>
+					</button>
 					<div class="header__menu hidden-tab">
 						<ul class="main-menu">
 							<li class="main-menu__item">
@@ -61,14 +61,13 @@
 							</li>
 						</ul>
 					</div>
-					<div class="header__search-loop hidden-tab">
+					<button class="header__search-loop hidden-tab">
 						<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 							width="23px" height="22.5px" viewBox="0 0 23 22.5" enable-background="new 0 0 23 22.5" xml:space="preserve" class="search-loop">
 							<path d="M16.2,14.3c0.2-0.3,0.4-0.5,0.5-0.8c2.5-4.3,1-9.8-3.3-12.3c-4.3-2.5-9.8-1-12.3,3.3c-2.5,4.3-1,9.8,3.3,12.3
 								c3.4,2,7.6,1.5,10.4-1l6.7,6.7l1.4-1.4L16.2,14.3z M9,16c-3.9,0-7-3.1-7-7s3.1-7,7-7s7,3.1,7,7S12.9,16,9,16z"/>
 						</svg>
-	
-					</div>
+					</button>
 					<div class="header__switch-lng">
 						<button class="switch-lng enabled">ru</button>
 						<button class="switch-lng">en</button>
@@ -181,7 +180,7 @@
 													<span class="slider__date_normal">мая 2000	</span>
 												</div>
 												<div class="slider__point"></div>
-												<div class="slider__text">
+												<div class="slider__text last">
 													<h4>Основание предприятия</h4>
 													<p>История предприятия берет свое начало в мае 1991 года,
 															когда в период стремительного ухудшения экономического положения
@@ -1067,7 +1066,13 @@
  <div class="popup">
 	 <div class="popup__form">
 		<div class="close-form">
-			<img src="./libs/lightbox2-master/dist/images/close.png" alt="">
+			<svg 
+				xmlns="http://www.w3.org/2000/svg"
+				xmlns:xlink="http://www.w3.org/1999/xlink"
+				width="16px" height="15px">
+				<path fill-rule="evenodd"  fill="rgb(34, 107, 197)"
+				d="M15.987,0.726 L8.960,7.753 L15.425,14.218 L14.718,14.925 L8.253,8.460 L1.726,14.987 L1.013,14.274 L7.540,7.747 L0.575,0.782 L1.282,0.075 L8.247,7.040 L15.274,0.013 L15.987,0.726 Z"/>
+			</svg>
 		</div>
 		 <div class="row">
 			 <div class="col-12">
@@ -1080,18 +1085,27 @@
 							 <div class="form-field">
 								 <label for="" class="form-label">Имя</label>
 								 <input type="text" class="form-input" name='name'>
+								 <div class="alert-msg">
+									 <p>поле не может быть пустым</p>
+								 </div>
 							 </div>
 						 </div>
 						 <div class="col-12 col-sm-6">
 							 <div class="form-field">
 								 <label for="" class="form-label">Email</label>
 								 <input type="text" class="form-input" name='email'>
+								 <div class="alert-msg">
+									<p>поле не может быть пустым</p>
+								 </div>
 							 </div>
 						 </div>
 						 <div class="col-12">
 							 <div class="form-field">
 								<label for="" class="form__text-label">Сообщение</label>
 								<textarea name="" id="" cols="30" rows="5" class="form-text"></textarea>
+								<div class="alert-msg">
+									<p>поле не может быть пустым</p>
+								</div>
 							 </div>
 						 </div>
 						 <div class="col-12">

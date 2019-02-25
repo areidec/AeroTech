@@ -16,7 +16,7 @@
         transform: translate(-50%, -50%)
         position: absolute
         background-color: $bgCard
-        padding: 20px
+        padding: 30px
         max-width: 600px
     &__title
         font-size: 24px
@@ -112,3 +112,36 @@
 .error
     input, textarea
         border-bottom: 2px red solid !important
+    .alert-msg
+        opacity: 1 !important
+        height: 50px
+        padding: 13px 20px 18px
+.alert-msg
+    position: absolute
+    z-index: 3
+    top: -webkit-calc(100% + 22px)
+    top: calc(100% + 22px)
+    padding: 0
+    display: block
+    width: 100%
+    font-size: 12px
+    line-height: normal
+    color: #f5515c
+    opacity: 0
+    height: 0
+    background-color: #fff
+    box-shadow: 0px 10px 20px 0 rgba(0, 0, 0, 0.1)
+    transition: all 0.3s ease-in-out
+    &::before
+        content: ''
+        display: block
+        position: absolute
+        top: -12px
+        left: 20px
+        width: 0
+        height: 0
+        border-bottom: 12px solid #fff
+        border-right: 12px solid transparent
+        border-left: 12px solid transparent
+    p 
+        margin: 0
